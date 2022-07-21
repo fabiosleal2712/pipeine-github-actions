@@ -47,10 +47,12 @@ provider "aws" {
   }
 }
 
+
+resource "aws_s3_bucket" "vpc" {
   backend = "s3"
   config = {
     bucket = "fabio-remote-state156754f22"
     key    = "aws-vpc/terraform.tfstate"
     region = "us-east-1"
   }
-
+}
